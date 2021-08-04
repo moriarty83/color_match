@@ -34,6 +34,10 @@ public class BallScript : MonoBehaviour
         int gAbsolute = Mathf.Abs(255 - (Mathf.Abs(colorToMatch.g - clickedColor.g)));
         int bAbsolute = Mathf.Abs(255 - (Mathf.Abs(colorToMatch.b - clickedColor.b)));
 
-        return rAbsolute + gAbsolute + bAbsolute;
+        Debug.Log("Clicked Color: " + clickedColor);
+        Debug.Log("Color to Match: " + colorToMatch);
+
+
+        return (rAbsolute + gAbsolute + bAbsolute)*100 / (255*3);
     }
 }

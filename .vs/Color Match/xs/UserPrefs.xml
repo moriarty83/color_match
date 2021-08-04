@@ -1,5 +1,5 @@
 ﻿<Properties StartupConfiguration="{5D6958FD-1B95-74A2-9B39-7E939B9B385C}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CameraImage.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/BallScript.cs">
     <Files>
       <File FileName="Assets/Scripts/BallScript.cs" Line="16" Column="6" />
       <File FileName="Assets/Scripts/CameraImage.cs" Line="30" Column="41" />
@@ -8,10 +8,8 @@
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Color Match" expanded="True">
-            <Node name="Assets" expanded="True">
-              <Node name="Scripts" expanded="True">
-                <Node name="CameraImage.cs" selected="True" />
-              </Node>
+            <Node name="Assets" expanded="True" selected="True">
+              <Node name="Scripts" expanded="True" />
             </Node>
           </Node>
         </State>
@@ -20,7 +18,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="128a30fa-ade9-47ca-af28-5ed5dd5cfe15" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="54a1eca7-da5e-41a2-871a-74cce22e38e8" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
