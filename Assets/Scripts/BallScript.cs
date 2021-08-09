@@ -5,11 +5,13 @@ using UnityEngine;
 public class BallScript : MonoBehaviour
 {
     private Material material;
+    private GameManager gameManager;
     private Color32 colorToMatch;
      
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         material = this.gameObject.GetComponent<Renderer>().material;
         NewMatchColor();
         
@@ -18,7 +20,7 @@ public class BallScript : MonoBehaviour
     // Creates a random color and applies it to the Sphere
     public void NewMatchColor()
     {
-        colorToMatch = Random.ColorHSV();
+        colorToMatch = gameManager.colorPallet.RandomColor();
         material.color = colorToMatch;
         // Debug.Log(color.r);
         

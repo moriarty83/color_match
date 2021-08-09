@@ -15,9 +15,14 @@ public class CameraImage : MonoBehaviour
 
     private BallScript ballScript;
 
+    // GameManager Script
+
+    private GameManager gameManager;
+
     void Start()
     {
         ballScript = GameObject.Find("Sphere").GetComponent<BallScript>();
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         webCamTexture = new WebCamTexture();
         rawimage.texture = webCamTexture;
         rawimage.material.mainTexture = webCamTexture;
@@ -27,7 +32,8 @@ public class CameraImage : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetMouseButtonDown(0)){
+        if(Input.GetMouseButtonDown(0) && gameManager.canClick){
+            Debug.Log(gameManager.canClick);
             Vector3 mousePosition = Input.mousePosition;
             
             Debug.Log(Input.mousePosition);
@@ -45,11 +51,14 @@ public class CameraImage : MonoBehaviour
             else
             {
                 Color32 clickedColor = webCamTexture.GetPixel((int)mousePosition.x, (int)mousePosition.y);
+                gameManager.scoreAndContinue(ballScript.compareColors(clickedColor));
                 Debug.Log(ballScript.compareColors(clickedColor));
 
             }
         }
     }
+
+
 
 }
 
