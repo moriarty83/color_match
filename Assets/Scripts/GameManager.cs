@@ -6,8 +6,9 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public int score = 0;
+
+    public GameObject pointsScoredObject;
     public Text pointsScoredText;
-    public Text totalScoreText;
 
     public bool canClick = true;
 
@@ -15,10 +16,9 @@ public class GameManager : MonoBehaviour
 
     public ColorPallet colorPallet = new ColorPallet();
 
-    public int[,] statusArray = new int [216, 2];
-
     private void Start()
     {
+        pointsScoredObject.SetActive(false);
         ballScript = GameObject.Find("Sphere").GetComponent<BallScript>();
         // pointsScoredText = GameObject.Find("PointsScored").GetComponent<Text>();
         // totalScoreText = GameObject.Find("TotalScore").GetComponent<Text>();
@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
     {
         //Keepts UI Score up to date
 
-        totalScoreText.text = "Score: " + score;
+        // totalScoreText.text = "Score: " + score;
     }
 
     public void scoreAndContinue(int points)
@@ -41,11 +41,11 @@ public class GameManager : MonoBehaviour
         //Adds points to score
         score += points;
 
-        //Turns on and populates the PointsScored UI.
-        pointsScoredText.enabled = true;
-        pointsScoredText.text = points + "points";
+        // Turns on and populates the PointsScored UI.
+        pointsScoredObject.SetActive(true);
+        pointsScoredText.text = points + "%";
 
-        //Waits two seconds
+        // Waits two seconds
         StartCoroutine(wait(2));
     }
 
@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
 
         // Turns of points scored UI.
         pointsScoredText.text = "";
-        pointsScoredText.enabled = false;
+        pointsScoredObject.SetActive(false);
 
         // Gets new color.
         ballScript.NewMatchColor();

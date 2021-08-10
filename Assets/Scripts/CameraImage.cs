@@ -32,8 +32,8 @@ public class CameraImage : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetMouseButtonDown(0) && gameManager.canClick){
-            Debug.Log(gameManager.canClick);
+        if(Input.GetMouseButtonDown(0)){
+            
             Vector3 mousePosition = Input.mousePosition;
             
             Debug.Log(Input.mousePosition);
@@ -44,11 +44,18 @@ public class CameraImage : MonoBehaviour
                 if(hit.transform.name == "Sphere")
                 {
                     ballScript.NewMatchColor();
+                    Debug.Log("You selected the " + hit.transform.name);
+                    return;
                 }
-                Debug.Log("You selected the " + hit.transform.name);
-                return;
+
+                if(hit.transform.name == "ProgressButton")
+                {
+                    GameObject.Find("GameManager").GetComponent<UIManager>().toggleProgress();
+                    return;
+                }
             }
-            else
+            
+            else if (gameManager.canClick)
             {
                 Color32 clickedColor = webCamTexture.GetPixel((int)mousePosition.x, (int)mousePosition.y);
                 gameManager.scoreAndContinue(ballScript.compareColors(clickedColor));

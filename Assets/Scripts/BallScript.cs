@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class BallScript : MonoBehaviour
 {
-    private Material material;
     private GameManager gameManager;
+    private ProgressTracker progressTracker;
+
+    // Material that changes colors
+    private Material material;
     private Color32 colorToMatch;
+
      
     // Start is called before the first frame update
     void Start()
     {
+        progressTracker = GameObject.Find("GameManager").GetComponent<ProgressTracker>();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         material = this.gameObject.GetComponent<Renderer>().material;
         NewMatchColor();
@@ -39,6 +44,10 @@ public class BallScript : MonoBehaviour
         Debug.Log("Clicked Color: " + clickedColor);
         Debug.Log("Color to Match: " + colorToMatch);
 
+        int percent = (rAbsolute + gAbsolute + bAbsolute) * 100 / (255 * 3);
+        int index = System.Array.IndexOf(gameManager.colorPallet.netscapeColors, colorToMatch);
+
+        progressTracker.updateProgress(index, percent);
 
         return (rAbsolute + gAbsolute + bAbsolute)*100 / (255*3);
     }

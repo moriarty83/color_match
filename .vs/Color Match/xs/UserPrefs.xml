@@ -1,11 +1,12 @@
 ﻿<Properties StartupConfiguration="{5D6958FD-1B95-74A2-9B39-7E939B9B385C}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/UIManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CameraImage.cs">
     <Files>
-      <File FileName="Assets/Scripts/GameManager.cs" Line="16" Column="56" />
-      <File FileName="Assets/Scripts/BallScript.cs" Line="24" Column="39" />
-      <File FileName="Assets/Scripts/CameraImage.cs" Line="36" Column="45" />
-      <File FileName="Assets/Scripts/ColorPallet.cs" Line="65" Column="1" />
-      <File FileName="Assets/Scripts/UIManager.cs" Line="7" Column="16" />
+      <File FileName="Assets/Scripts/GameManager.cs" Line="67" Column="1" />
+      <File FileName="Assets/Scripts/BallScript.cs" />
+      <File FileName="Assets/Scripts/CameraImage.cs" Line="35" Column="41" />
+      <File FileName="Assets/Scripts/ColorPallet.cs" />
+      <File FileName="Assets/Scripts/UIManager.cs" Line="109" Column="10" />
+      <File FileName="Assets/Scripts/ProgressTracker.cs" Line="7" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,7 +14,7 @@
           <Node name="Color Match" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="UIManager.cs" selected="True" />
+                <Node name="CameraImage.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -23,7 +24,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="beabf9dc-c095-4d95-b213-a3d7f6898a5f" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="3b2e61b4-9bdf-4b5f-97a5-30b59a8d331c" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -166,7 +166,7 @@ GameObject:
   - component: {fileID: 6419253447351485266}
   m_Layer: 5
   m_Name: SwatchPrefab
-  m_TagString: Untagged
+  m_TagString: swatch
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -214,7 +214,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
