@@ -11,12 +11,15 @@ public class BallScript : MonoBehaviour
     private Material material;
     private Color32 colorToMatch;
 
+    private Color32[] gamePallet;
+
      
     // Start is called before the first frame update
     void Start()
     {
         progressTracker = GameObject.Find("GameManager").GetComponent<ProgressTracker>();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        gamePallet = gameManager.colorPallet.netscapeColors;
         material = this.gameObject.GetComponent<Renderer>().material;
         NewMatchColor();
         
@@ -25,7 +28,14 @@ public class BallScript : MonoBehaviour
     // Creates a random color and applies it to the Sphere
     public void NewMatchColor()
     {
+        
         colorToMatch = gameManager.colorPallet.RandomColor();
+
+        // Will keep selecting colors until it finds one that hasn't been found yet.
+        while(progressTracker.statusArray[System.Array.IndexOf(gamePallet,  colorToMatch), 1] == 1)
+        {
+            colorToMatch = gameManager.colorPallet.RandomColor();
+        }
         material.color = colorToMatch;
         // Debug.Log(color.r);
         

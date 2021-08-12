@@ -53,7 +53,16 @@ public class UIManager : MonoBehaviour
             GameObject newSwatch = GameObject.Instantiate(swatchPrefab);
             newSwatch.transform.SetParent(swatchGridObject.transform, false);
             newSwatch.GetComponentsInChildren<Image>()[1].color = gameManager.colorPallet.netscapeColors[i];
+            if (progressTracker.statusArray[i, 1] == 1)
+            {
+                newSwatch.GetComponentsInChildren<Image>()[2].enabled = true;
+                newSwatch.GetComponentInChildren<Text>().text = "Done!";
+
+            }
+            else
+            { 
             newSwatch.GetComponentInChildren<Text>().text = progressTracker.statusArray[i, 0].ToString() + " %";
+            }
             swatchObjects.Add(newSwatch);
 
         }

@@ -24,10 +24,13 @@ public class ProgressTracker : MonoBehaviour
 
     public void updateProgress(int index, int percent)
     {
-        statusArray[index, 0] = percent;
-        if(percent > 95)
+        if (percent > statusArray[index, 0])
         {
-            statusArray[index, 1] = 1;
+            statusArray[index, 0] = percent;
+            if(percent > 60)
+            {
+                statusArray[index, 1] = 1;
+            }
         }
     }
 
